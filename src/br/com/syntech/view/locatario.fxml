@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.syntech.controller.LocatarioController">
+   <children>
+      <TabPane fx:id="tab" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab fx:id="tabPesLocatarios" text="Pesquisar Locatários">
+               <content>
+                  <AnchorPane prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <Label layoutX="27.0" layoutY="35.0" prefHeight="35.0" prefWidth="238.0" text="Pesquisar Locatários" textFill="#9e9e9e" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txfPesNome" layoutX="78.0" layoutY="70.0" prefHeight="25.0" prefWidth="628.0" promptText="Digite o nome para filtar..." AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="80.0" />
+                        <TextField fx:id="txfPesCPF" layoutX="347.0" layoutY="80.0" prefHeight="25.0" prefWidth="125.0" promptText="CPF..." AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="80.0" />
+                        <TableView fx:id="tbwLocatarios" layoutX="76.0" layoutY="139.0" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="120.0">
+                           <columns>
+                              <TableColumn fx:id="tbcLocatarioID" prefWidth="40.0" text="ID" />
+                              <TableColumn fx:id="tbcLocatarioNome" prefWidth="161.0" text="Nome" />
+                              <TableColumn fx:id="tbcLocatarioCPF" prefWidth="96.0" text="CPF" />
+                              <TableColumn fx:id="tbcLocatarioRG" prefWidth="61.0" text="RG" />
+                              <TableColumn fx:id="tbcLocatarioProfissao" prefWidth="75.0" text="Profissão" />
+                              <TableColumn fx:id="tbcLocatarioEstadoCivil" prefWidth="75.0" text="Estado Civil" />
+                              <TableColumn fx:id="tbcLocatarioTel" prefWidth="86.0" text="Telefone" />
+                              <TableColumn fx:id="tbcLocatarioEmail" prefWidth="88.0" text="E-mail" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button mnemonicParsing="false" onAction="#onCancel" prefHeight="29.0" prefWidth="97.0" text="Cancel" textFill="#b94a4a" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabCadEditLocatarios" text="Cadastrar Locatário">
+               <content>
+                  <AnchorPane prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <Label fx:id="lblCadEditLocatarios" layoutX="27.0" layoutY="35.0" prefHeight="35.0" prefWidth="229.0" text="Cadastrar Locatário" textFill="#9e9e9e" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="232.0" layoutY="139.0" prefHeight="208.0" prefWidth="760.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="70.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="166.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="186.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="472.0" minWidth="10.0" prefWidth="210.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="472.0" minWidth="0.0" prefWidth="198.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="CPF" textFill="#808080">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="2.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadCPF" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label text="RG" textFill="#808080" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="7.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadRG" prefHeight="25.0" prefWidth="261.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label text="Nacionalidade" textFill="#808080" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="7.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadNacionalidade" text="Brasileiro(a)" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label text="Estado Civil" textFill="#808080" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="7.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <ComboBox fx:id="cmbCadEstadoCivil" prefHeight="25.0" prefWidth="190.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </ComboBox>
+                              <Label text="Nome" textFill="#808080" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="2.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadNome" GridPane.columnSpan="4" GridPane.rowIndex="3" />
+                              <Label text="Telefone" textFill="#808080" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="2.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadTel" prefHeight="25.0" prefWidth="111.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label text="E-mail" textFill="#808080" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="7.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadEmail" prefHeight="25.0" prefWidth="111.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <Label text="Profissão" textFill="#808080" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="2.0" top="8.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <TextField fx:id="txfCadProfissao" prefHeight="25.0" prefWidth="211.0" text="Autônomo" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <Button layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#onCancelCad" prefHeight="30.0" prefWidth="90.0" text="Cancel" textFill="#b94a4a" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnDelete" layoutX="580.0" layoutY="517.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="30.0" prefWidth="90.0" text="Deletar" textFill="#b94a4a" visible="false" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="130.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnCadEdit" mnemonicParsing="false" onAction="#onSaveEdit" prefHeight="30.0" prefWidth="90.0" text="Salvar" textFill="#517271" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="15.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
